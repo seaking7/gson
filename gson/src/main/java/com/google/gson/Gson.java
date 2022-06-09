@@ -37,7 +37,6 @@ import java.util.concurrent.atomic.AtomicLongArray;
 
 import com.google.gson.internal.ConstructorConstructor;
 import com.google.gson.internal.Excluder;
-import com.google.gson.internal.GsonBuildConfig;
 import com.google.gson.internal.LazilyParsedNumber;
 import com.google.gson.internal.Primitives;
 import com.google.gson.internal.Streams;
@@ -509,7 +508,7 @@ public final class Gson {
           return candidate;
         }
       }
-      throw new IllegalArgumentException("GSON (" + GsonBuildConfig.VERSION + ") cannot handle " + type);
+      throw new IllegalArgumentException("GSON () cannot handle " + type);
     } finally {
       threadCalls.remove(type);
 
@@ -752,7 +751,7 @@ public final class Gson {
     } catch (IOException e) {
       throw new JsonIOException(e);
     } catch (AssertionError e) {
-      AssertionError error = new AssertionError("AssertionError (GSON " + GsonBuildConfig.VERSION + "): " + e.getMessage());
+      AssertionError error = new AssertionError("AssertionError (GSON ): " + e.getMessage());
       error.initCause(e);
       throw error;
     } finally {
@@ -848,7 +847,7 @@ public final class Gson {
     } catch (IOException e) {
       throw new JsonIOException(e);
     } catch (AssertionError e) {
-      AssertionError error = new AssertionError("AssertionError (GSON " + GsonBuildConfig.VERSION + "): " + e.getMessage());
+      AssertionError error = new AssertionError("AssertionError (GSON): " + e.getMessage());
       error.initCause(e);
       throw error;
     } finally {
@@ -1009,7 +1008,7 @@ public final class Gson {
       // TODO(inder): Figure out whether it is indeed right to rethrow this as JsonSyntaxException
       throw new JsonSyntaxException(e);
     } catch (AssertionError e) {
-      AssertionError error = new AssertionError("AssertionError (GSON " + GsonBuildConfig.VERSION + "): " + e.getMessage());
+      AssertionError error = new AssertionError("AssertionError (GSON ): " + e.getMessage());
       error.initCause(e);
       throw error;
     } finally {

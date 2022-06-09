@@ -3,10 +3,10 @@
  * @since 2.8.6
  */
 module com.google.gson {
-	exports com.google.gson;
-	exports com.google.gson.annotations;
-	exports com.google.gson.reflect;
-	exports com.google.gson.stream;
+	exports tk.google.gson;
+	exports tk.google.gson.annotations;
+	exports tk.google.gson.reflect;
+	exports tk.google.gson.stream;
 
 	// Optional dependency on java.sql
 	requires static java.sql;
